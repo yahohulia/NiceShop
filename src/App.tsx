@@ -1,21 +1,22 @@
-import React from 'react';
+import { Provider } from 'react-redux';
 import './App.scss';
+import { Footer } from './components/Footer';
+import { NavBar } from './components/NavBar';
+import { Outlet } from 'react-router-dom';
+import { store } from './utils/store';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
-
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
-
-export const App: React.FC = () => {
+export const App = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <NavBar />
+
+        <main className="main-content">
+          <Outlet />
+        </main>
+
+        <Footer />
+      </div>
+    </Provider>
   );
 };

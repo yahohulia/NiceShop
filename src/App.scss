@@ -1,3 +1,25 @@
-.starter {
-  font-size: 18px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-primary);
+  background: var(--black-bg);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  .main-content {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
 }
