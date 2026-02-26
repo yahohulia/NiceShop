@@ -121,7 +121,7 @@ export const Catalog: React.FC = () => {
         </div>
         <div className={styles.catalog__title}>{title}</div>
         <span className={styles.catalog__countOfModels}>
-          {visibleProducts.length} models
+          {products.length} models
         </span>
 
         <div className={styles.catalog__params}>
